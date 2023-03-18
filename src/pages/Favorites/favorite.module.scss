@@ -1,0 +1,42 @@
+.wrapper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 2rem auto;
+
+  &__breadcrumb {
+    display: block;
+    margin: 0 0 1rem 1rem;
+
+    span {
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0.75;
+      color: #ffffff;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    .not-found {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0;
+
+      span {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #ffffff;
+        opacity: 0.75;
+      }
+    }
+  }
+}

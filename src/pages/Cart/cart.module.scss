@@ -1,0 +1,207 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  &__content {
+    display: flex;
+    flex: 1 1 calc(60% - 1.5rem);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem 0;
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 0 0 2rem 0;
+
+      span {
+        font-size: 1rem;
+        font-weight: 600;
+        opacity: 0.75;
+      }
+
+      &__backward {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        a {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          text-decoration: none;
+          color: #ffffff;
+          opacity: 0.75;
+
+          svg {
+            fill: #ffffff;
+            transform: rotate(180deg);
+          }
+
+          span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+          }
+
+          &:hover {
+            text-decoration: underline;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+    }
+  }
+
+  &__bill {
+    display: flex;
+    flex: 1 1 calc(40% - 1.5rem);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    height: 250px;
+    position: sticky;
+    top: calc(75px + 2rem);
+
+    .title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 0 0 2rem 0;
+      height: 24px;
+
+      span {
+        font-size: 1.25rem;
+        font-weight: 600;
+        opacity: 0.75;
+        color: #222831;
+        padding: 0 1rem;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      gap: 1rem;
+
+      &__product,
+      &__shipping,
+      &__total {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        span {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #222831;
+          opacity: 0.75;
+          padding: 0 1rem;
+        }
+
+        &:nth-child(odd) {
+          span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #222831;
+            opacity: 1;
+          }
+        }
+      }
+
+      &__total {
+        margin: 2rem 0 0 0;
+        background-color: #222831;
+        border-radius: 0.5rem;
+
+        span {
+          &:first-child,
+          &:last-child {
+            font-size: 2rem;
+            font-weight: 600;
+            opacity: 1;
+            color: #ffd369;
+          }
+        }
+      }
+    }
+  }
+
+  .not-found {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    gap: 1rem;
+
+    span {
+      font-size: 1.25rem;
+      font-weight: 600;
+      opacity: 0.75;
+      color: #ffffff;
+    }
+
+    button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: #222831;
+      opacity: 0.75;
+      background-color: #ffd369;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin: 2rem 0;
+
+      span {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #222831;
+      }
+
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+  }
+}
