@@ -4,7 +4,7 @@ import { Tooltip } from '@mui/material';
 
 import ConfirmModal from '../../../components/ConfirmModal/ConfirmModal';
 import { LikeSvg, TrashSvg, PlusSvg, MinusSvg } from '../../Icons';
-import { removeFromCart, setFavorite, increaseCart, decreaseCart, removeFromCartAndAddToFavorite } from '../../../global/store/actions';
+import { removeFromCart, setFavorite, increaseCart, decreaseCart, removeFromCartAndAddToFavorite } from '../../../global/store/slices';
 
 import styles from './product-card-cart.module.scss';
 
@@ -47,18 +47,18 @@ const ProductCardCart = (props) => {
               <button onClick={() => setOpen(true)}>
                 <TrashSvg />
               </button>
-              <button onClick={() => setFavorite(dispatch, item)} className={`${styles.like} ${isFav ? styles.fav : ''}`.trim()}>
+              <button onClick={() => dispatch(setFavorite(item))} className={`${styles.like} ${isFav ? styles.fav : ''}`.trim()}>
                 <LikeSvg />
               </button>
             </div>
             <div className={styles.actions__apart}>
-              <button onClick={() => decreaseCart(dispatch, item)} disabled={item.count === 1} className={item.count === 1 ? styles.disabled : ''}>
+              <button onClick={() => dispatch(decreaseCart(item))} disabled={item.count === 1} className={item.count === 1 ? styles.disabled : ''}>
                 <MinusSvg />
               </button>
               <div className={styles.count}>
                 <span>{item.count || 0}</span>
               </div>
-              <button onClick={() => increaseCart(dispatch, item)} disabled={item.count === 10} className={item.count === 10 ? styles.disabled : ''}>
+              <button onClick={() => dispatch(increaseCart(item))} disabled={item.count === 10} className={item.count === 10 ? styles.disabled : ''}>
                 <PlusSvg />
               </button>
             </div>
@@ -68,8 +68,8 @@ const ProductCardCart = (props) => {
       <ConfirmModal
         open={open}
         setOpen={setOpen}
-        handleDelete={() => removeFromCart(dispatch, item)}
-        handleDeleteAndAddFav={() => removeFromCartAndAddToFavorite(dispatch, item)}
+        handleDelete={() => dispatch(removeFromCart(item))}
+        handleDeleteAndAddFav={() => dispatch(removeFromCartAndAddToFavorite(item))}
       />
     </div>
   );

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Tooltip } from '@mui/material';
 
-import { addToCart, setFavorite } from '../../../global/store/actions';
+import { addToCart, setFavorite } from '../../../global/store/slices';
 import { LikeSvg } from '../../Icons';
 
 import styles from './product-card-home.module.scss';
@@ -47,11 +47,11 @@ const ProductCardHome = (props) => {
           </div>
         </div>
       </div>
-      <button onClick={() => setFavorite(dispatch, item)} className={`${styles.like} ${isFav ? styles.fav : ''}`.trim()} name={'favorite'}>
+      <button onClick={() => dispatch(setFavorite(item))} className={`${styles.like} ${isFav ? styles.fav : ''}`.trim()} name={'favorite'}>
         <LikeSvg name='favorite' />
       </button>
       <div className={styles.actions}>
-        <button onClick={() => addToCart(dispatch, item)}>{t('addToCart')}</button>
+        <button onClick={() => dispatch(addToCart(item))}>{t('addToCart')}</button>
       </div>
     </div>
   );

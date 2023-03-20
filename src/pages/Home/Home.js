@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import ProductCardHome from '../../components/ProductCards/ProductCardHome/ProductCardHome';
 import Spinner from '../../components/Spinner/Spinner';
-import { setProductLength, setSearchValue } from '../../global/store/actions';
+import { setProductLength, setSearchValue } from '../../global/store/slices';
 
 import styles from './home.module.scss';
 
@@ -27,7 +27,7 @@ const Home = () => {
     try {
       const response = await axios.get(url);
       setData(response.data);
-      setProductLength(dispatch, response.data.length);
+      dispatch(setProductLength(response.data.length));
     } catch (error) {
       setIsError(true);
       console.log(error);
@@ -38,13 +38,13 @@ const Home = () => {
 
   useEffect(() => {
     getAllProducts();
-    setSearchValue(dispatch, '');
+    dispatch(setSearchValue(''));
 
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
-    setProductLength(dispatch, data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase())).length);
+    dispatch(setProductLength(data.filter((item) => item.title.toLowerCase().includes(value.toLowerCase())).length));
 
     // eslint-disable-next-line
   }, [value]);

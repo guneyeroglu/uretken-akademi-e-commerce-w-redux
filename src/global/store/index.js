@@ -1,8 +1,11 @@
-import { combineReducers, createStore } from 'redux';
-import { productReducer, commonReducer } from './reducers';
+import { configureStore } from '@reduxjs/toolkit';
 
-const combine = combineReducers({ productReducer, commonReducer });
+import productReducer from './slices/productSlice';
+import commonReducer from './slices/commonSlice';
 
-export const configureStore = () => {
-  return createStore(combine);
-};
+export default configureStore({
+  reducer: {
+    productReducer,
+    commonReducer,
+  },
+});

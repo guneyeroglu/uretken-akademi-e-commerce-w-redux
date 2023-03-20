@@ -6,7 +6,7 @@ import { IconButton, Popover } from '@mui/material';
 
 import { FavoriteSvg, ArrowSvg } from '../Icons';
 import ProductCardFavorite from '../ProductCards/ProductCardFavorite/ProductCardFavorite';
-import { setFavoriteMenu } from '../../global/store/actions';
+import { setFavoriteMenu } from '../../global/store/slices';
 
 import styles from './favorites-menu.module.scss';
 
@@ -21,12 +21,12 @@ const FavoritesMenu = () => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    setFavoriteMenu(dispatch, true);
+    dispatch(setFavoriteMenu(true));
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    setFavoriteMenu(dispatch, false);
+    dispatch(setFavoriteMenu(false));
   };
 
   const handleFavoritesClick = () => {

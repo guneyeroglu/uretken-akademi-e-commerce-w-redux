@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { IconButton, Menu, MenuItem } from '@mui/material';
+import { setSettingMenu } from '../../global/store/slices';
 
 import styles from './custom-menu.module.scss';
-import { setSettingMenu } from '../../global/store/actions/commonActions';
 
 const CustomMenu = (props) => {
   const { list, icon, text } = props;
@@ -13,11 +13,11 @@ const CustomMenu = (props) => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    setSettingMenu(dispatch, true);
+    dispatch(setSettingMenu(true));
   };
   const handleClose = () => {
     setAnchorEl(null);
-    setSettingMenu(dispatch, false);
+    dispatch(setSettingMenu(false));
   };
 
   return (

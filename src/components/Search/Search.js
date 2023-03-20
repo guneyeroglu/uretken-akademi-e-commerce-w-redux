@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { CloseSvg } from '../Icons';
-import { setSearchValue } from '../../global/store/actions';
+import { setSearchValue } from '../../global/store/slices';
 
 import styles from './search.module.scss';
 
@@ -17,7 +17,7 @@ const Search = () => {
   const location = useLocation();
 
   const handleSetSearch = (value) => {
-    setSearchValue(dispatch, value);
+    dispatch(setSearchValue(value));
   };
 
   useEffect(() => {
