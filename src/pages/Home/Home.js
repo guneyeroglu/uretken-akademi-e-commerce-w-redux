@@ -6,6 +6,7 @@ import axios from 'axios';
 import ProductCardHome from '../../components/ProductCards/ProductCardHome/ProductCardHome';
 import Spinner from '../../components/Spinner/Spinner';
 import { setProductLength, setSearchValue } from '../../global/store/slices';
+// import data from '../../global/data/data.json';
 
 import styles from './home.module.scss';
 
