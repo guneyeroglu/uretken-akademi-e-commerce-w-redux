@@ -1,3 +1,5 @@
+@use '../../../assets/styles/variables/device-size' as device;
+
 .wrapper {
   flex: 0 1 calc(25% - 2rem);
   margin: 1rem;
@@ -33,6 +35,7 @@
         img {
           max-width: 200px;
           max-height: 250px;
+          width: 100%;
         }
       }
     }
@@ -162,5 +165,35 @@
       width: 100%;
       visibility: visible;
     }
+  }
+}
+
+@media screen and (max-width: device.$m) {
+  .wrapper {
+    flex: 0 1 calc(33.333% - 2rem);
+    margin: 1rem;
+
+    .actions {
+      width: 100%;
+      visibility: visible;
+    }
+
+    .like {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: device.$s) {
+  .wrapper {
+    flex: 0 1 calc(50% - 2rem);
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: device.$xs) {
+  .wrapper {
+    flex: 0 1 calc(100% - 2rem);
+    margin: 1rem;
   }
 }

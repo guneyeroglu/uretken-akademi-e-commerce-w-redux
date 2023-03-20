@@ -1,7 +1,7 @@
 import Router from './router/Router';
 
 import './assets/i18n';
-import './index.scss';
+import './assets/styles/global.scss';
 
 const App = () => {
   return <Router />;

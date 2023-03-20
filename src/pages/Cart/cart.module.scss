@@ -1,3 +1,5 @@
+@use '../../assets/styles/variables/device-size' as device;
+
 .wrapper {
   display: flex;
   flex-direction: row;
@@ -152,10 +154,11 @@
         span {
           &:first-child,
           &:last-child {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             opacity: 1;
             color: #ffd369;
+            text-align: start;
           }
         }
       }
@@ -203,5 +206,14 @@
         cursor: pointer;
       }
     }
+  }
+}
+
+@media screen and (max-width: device.$m) {
+  .wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    max-width: 800px;
   }
 }

@@ -1,3 +1,5 @@
+@use '../../assets/styles/variables/device-size' as device;
+
 .wrapper {
   max-width: 1400px;
   width: 100%;
@@ -36,7 +38,14 @@
         font-weight: 600;
         color: #ffffff;
         opacity: 0.75;
+        text-align: center;
       }
     }
+  }
+}
+
+@media screen and (max-width: device.$xs) {
+  .wrapper {
+    max-width: 400px;
   }
 }

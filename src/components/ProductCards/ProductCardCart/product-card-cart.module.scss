@@ -1,3 +1,5 @@
+@use '../../../assets/styles/variables/device-size' as device;
+
 .wrapper {
   flex: 0 1 100%;
   border: 1px solid #ffffff;
@@ -159,6 +161,125 @@
             button {
               &:active {
                 background-color: #2c3440;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: device.$xs) {
+  .wrapper {
+    &__item {
+      &--img {
+        flex: 1 1 calc(35% - 1rem);
+
+        .container {
+          flex: 1 1 calc(35% - 1rem);
+        }
+      }
+
+      &--info {
+        flex: 1 1 calc(65% - 1rem);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: device.$xxs) {
+  .wrapper {
+    &__item {
+      &--img {
+        flex: 1 1 calc(40% - 1rem);
+
+        .container {
+          flex: 1 1 calc(40% - 1rem);
+        }
+      }
+
+      &--info {
+        flex: 1 1 calc(60% - 1rem);
+
+        .actions {
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: stretch;
+          height: 100%;
+          gap: 0;
+
+          &__apart {
+            justify-content: flex-start;
+            align-items: center;
+            gap: 0.5rem;
+
+            button {
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              flex: 1;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background-color: #222831;
+              max-width: 40px;
+
+              svg {
+                fill: #ffffff;
+              }
+
+              &:not(.disabled):hover {
+                cursor: pointer;
+
+                &:first-child {
+                  svg {
+                    fill: #da0037;
+                  }
+                }
+
+                &:last-child {
+                  svg {
+                    fill: #ffd369;
+                  }
+                }
+              }
+
+              &.fav {
+                display: flex;
+
+                svg {
+                  fill: #ffd369;
+                }
+              }
+
+              &.disabled {
+                opacity: 0.5;
+              }
+            }
+
+            .count {
+              min-width: 40px;
+              height: 40px;
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+
+              span {
+                color: #222831;
+                font-size: 1rem;
+                font-weight: 600;
+                opacity: 0.75;
+              }
+            }
+
+            &:last-child {
+              button {
+                &:active {
+                  background-color: #2c3440;
+                }
               }
             }
           }
