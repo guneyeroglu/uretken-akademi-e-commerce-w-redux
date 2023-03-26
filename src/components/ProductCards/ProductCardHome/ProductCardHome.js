@@ -18,7 +18,7 @@ const ProductCardHome = (props) => {
   const isFav = favorites.find((fav) => fav.id === item.id);
 
   const handleNavigate = () => {
-    navigate(`product/${item.id}`);
+    navigate(`/product/${item.id}`);
   };
 
   return (
